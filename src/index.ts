@@ -1,33 +1,30 @@
 
-// const bt = document.getElementById('button') as HTMLButtonElement;
-
-// bt.addEventListener('click', function(){
-//      window.location.href ="../index.html"
-
-// })
-
-
-// _________________________________________________________________________
-
 
 const real = document.getElementById('true_1') as HTMLBodyElement;   
 const real2 = document.getElementById("true1") as HTMLBodyElement;
-
-let pointer:number = 0;
-
 const point = document.getElementById('point') as HTMLBodyElement;
-point.innerText = `${pointer}`;
+const started = document.getElementById('start') as HTMLBodyElement;
+const bar = document.getElementById('bar') as HTMLBodyElement
 
-let init:number = 1;
 
-const quest = document.getElementById('start') as HTMLBodyElement;
-quest.innerText = `${init}`;
+let pointer:string = '0';
+localStorage.setItem('ponto', pointer);
+point.innerHTML = pointer;
+
 
 real.addEventListener('click',function(){
     real.style.backgroundColor = '#38B000';
     real2.style.backgroundColor = '#006400';
-    point.innerText = `${pointer = 5}`;
+
+localStorage.clear()
+
+    let reste = point.innerText = `${pointer = '5'}`;
+    localStorage.setItem('ponto', reste);
+
 })
+
+let puxa:Storage| any = localStorage.getItem('ponto');
+point.innerHTML = puxa;
 
 
 const eror1= document.getElementById('false_1') as HTMLBodyElement;
@@ -64,3 +61,4 @@ reload.addEventListener('click', function(){
 
 })
 
+// ___________________________________________________________

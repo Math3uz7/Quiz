@@ -1,22 +1,21 @@
 "use strict";
-// const bt = document.getElementById('button') as HTMLButtonElement;
-// bt.addEventListener('click', function(){
-//      window.location.href ="../index.html"
-// })
-// _________________________________________________________________________
 const real = document.getElementById('true_1');
 const real2 = document.getElementById("true1");
-let pointer = 0;
 const point = document.getElementById('point');
-point.innerText = `${pointer}`;
-let init = 1;
-const quest = document.getElementById('start');
-quest.innerText = `${init}`;
+const started = document.getElementById('start');
+const bar = document.getElementById('bar');
+let pointer = '0';
+localStorage.setItem('ponto', pointer);
+point.innerHTML = pointer;
 real.addEventListener('click', function () {
     real.style.backgroundColor = '#38B000';
     real2.style.backgroundColor = '#006400';
-    point.innerText = `${pointer = 5}`;
+    localStorage.clear();
+    let reste = point.innerText = `${pointer = '5'}`;
+    localStorage.setItem('ponto', reste);
 });
+let puxa = localStorage.getItem('ponto');
+point.innerHTML = puxa;
 const eror1 = document.getElementById('false_1');
 const eror2 = document.getElementById('false1');
 const eror3 = document.getElementById('false_2');
@@ -38,3 +37,4 @@ const reload = document.getElementById('reload');
 reload.addEventListener('click', function () {
     window.location.href = "/entrada/entrada.html";
 });
+// ___________________________________________________________

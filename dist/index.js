@@ -3,16 +3,19 @@ const real = document.getElementById('true_1');
 const real2 = document.getElementById("true1");
 const point = document.getElementById('point');
 const started = document.getElementById('start');
-const bar = document.getElementById('bar');
-let pointer = '0';
-localStorage.setItem('ponto', pointer);
-point.innerHTML = pointer;
+const bar = document.getElementById('parce');
+let pointer = 0;
+let maker = 5;
+// localStorage.setItem('ponto', pointer);
+// point.innerHTML = pointer;
 real.addEventListener('click', function () {
     real.style.backgroundColor = '#38B000';
     real2.style.backgroundColor = '#006400';
+    bar.style.display = "block";
     localStorage.clear();
-    let reste = point.innerText = `${pointer = '5'}`;
+    let reste = point.innerText = `${pointer + maker}`;
     localStorage.setItem('ponto', reste);
+    localStorage.getItem('ponto' + 5);
 });
 let puxa = localStorage.getItem('ponto');
 point.innerHTML = puxa;
@@ -35,6 +38,9 @@ eror1.addEventListener('click', function () {
 // ___________________________________________________________
 const reload = document.getElementById('reload');
 reload.addEventListener('click', function () {
-    window.location.href = "/entrada/entrada.html";
+    window.location.href = "entrada/entrada.html";
 });
 // ___________________________________________________________
+const final = document.getElementById('final_score');
+let finish = localStorage.getItem('ponto');
+final.innerText = finish;

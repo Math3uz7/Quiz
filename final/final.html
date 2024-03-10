@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <title>Document</title>
+    <title>Quiz</title>
 </head>
 
 <body>
@@ -19,19 +19,22 @@
         <section class="right">
             <ul>
                 <li>Score</li>
-                <li id="final_score"></li>
             </ul>
         </section>
     </header>
+    <li id="final_score"></li>
     <main>
         <div class="img">
             <img src="assets/img/young-and-happy-animate.svg" alt="">
             <!-- <a href="https://storyset.com/people">People illustrations by Storyset</a> -->
         </div>
-        <button id="reload">
-            Reiniciar
-        </button>
+        <a href="/index.html">
+            <button id="reload" onclick="reset()">
+                Reiniciar
+            </button>
+        </a>
     </main>
 </body>
 <script src="../dist/index.js"></script>
+
 </html>

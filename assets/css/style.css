@@ -19,11 +19,20 @@ body {
     background-color: var(--primary-color);
 }
 
+#final_score{
+    width: 50px;
+    height: 50px;
+}
+
+button{
+    width: 800px;
+    opacity: 0;
+}
+
 #parce {
+    width: 1px;
     height: 30px;
-    width: 30px;
     background-color: var(--second-color);
-    display: none;
 }
 
 a {

@@ -4,18 +4,48 @@ const real2 = document.getElementById("true1");
 const point = document.getElementById('point');
 const started = document.getElementById('start');
 const bar = document.getElementById('parce');
+const final = document.getElementById('final_score');
 let pointer = 0;
 let maker = 5;
-// localStorage.setItem('ponto', pointer);
-// point.innerHTML = pointer;
+let pointex = "0";
+if (localStorage.getItem('ponto') == undefined) {
+    localStorage.setItem('ponto', pointex);
+    point.innerHTML = pointex;
+}
 real.addEventListener('click', function () {
     real.style.backgroundColor = '#38B000';
     real2.style.backgroundColor = '#006400';
     bar.style.display = "block";
-    localStorage.clear();
+    localStorage.getItem('ponto' + 5);
     let reste = point.innerText = `${pointer + maker}`;
     localStorage.setItem('ponto', reste);
-    localStorage.getItem('ponto' + 5);
+});
+window.onload = function () {
+    let storedSize = localStorage.getItem('divSize');
+    if (storedSize) {
+        const take = document.getElementById('parce');
+        take.style.width = storedSize;
+    }
+};
+real.addEventListener('click', function resizeDiv() {
+    let div = document.getElementById('parce');
+    let currentSize = window.getComputedStyle(div).width;
+    if (currentSize === '1px') {
+        div.style.width = '50px';
+    }
+    else if (currentSize === '50px') {
+        div.style.width = '100px';
+    }
+    else if (currentSize === '100px') {
+        div.style.width = '150px';
+    }
+    else if (currentSize === '150px') {
+        div.style.width = '210px';
+    }
+    else {
+        div.style.width = '230px';
+    }
+    localStorage.setItem('divSize', div.style.width);
 });
 let puxa = localStorage.getItem('ponto');
 point.innerHTML = puxa;
@@ -36,11 +66,20 @@ eror1.addEventListener('click', function () {
     real2.style.backgroundColor = '#006400';
 });
 // ___________________________________________________________
-const reload = document.getElementById('reload');
-reload.addEventListener('click', function () {
-    window.location.href = "entrada/entrada.html";
-});
+//EXIBIR OS PONTOS FINAIS
+let pointer2 = 0;
+let maker2 = 5;
+let pointex2 = "0";
+let reste2 = final.innerText = `${pointer2 + maker2}`;
+localStorage.getItem('ponto' + 5);
+let puxa2 = localStorage.getItem('ponto');
+final.innerHTML = puxa2;
+if (localStorage.getItem('ponto') == undefined) {
+    localStorage.setItem('ponto', pointex2);
+    final.innerHTML = pointex2;
+}
 // ___________________________________________________________
-const final = document.getElementById('final_score');
-let finish = localStorage.getItem('ponto');
-final.innerText = finish;
+// RESET BAR AND POINTS
+function reset() {
+    localStorage.clear();
+}
